@@ -40,16 +40,16 @@ dashboard "star_wars_analysis_dashboard" {
 
     chart {
       title = "Top 10 Largest Planets"
-      query = query.largest_planets
+      query = query.top_10_largest_planets
       type  = "column"
       series "diameter" {
-        title = "Diameter"
+        title = "Diameter in km"
         color = "darkred"
       }
       axes {
         y {
           title {
-            value = "Diameter"
+            value = "Diameter in km"
           }
         }
       }
@@ -116,7 +116,7 @@ dashboard "star_wars_analysis_dashboard" {
       axes {
         y {
           title {
-            value = "Species"
+            value = "Average Height in cm"
           }
         }
       }
@@ -146,7 +146,7 @@ dashboard "star_wars_analysis_dashboard" {
       type  = "column"
       width = 4
       series "average_lifespan" {
-        title = "Average Lifespan"
+        title = "Average Lifespan in years"
         color = "darkblue"
       }
       axes {
@@ -235,7 +235,7 @@ query "total_characters" {
 
 # Chart Queries
 
-query "largest_planets" {
+query "top_10_largest_planets" {
   sql = <<-EOQ
     select
       name,
