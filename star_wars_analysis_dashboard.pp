@@ -8,21 +8,25 @@ dashboard "star_wars_analysis_dashboard" {
 
     card {
       query = query.total_starships
+      type  = "info"
       width = 3
     }
 
     card {
       query = query.total_planets
+      type  = "info"
       width = 3
     }
 
     card {
       query = query.total_species
+      type  = "info"
       width = 3
     }
 
     card {
       query = query.total_characters
+      type  = "info"
       width = 3
     }
   }
@@ -63,6 +67,7 @@ dashboard "star_wars_analysis_dashboard" {
       width = 4
     }
   }
+
   container {
 
     title = "Starships Analysis"
@@ -235,6 +240,20 @@ query "total_characters" {
 
 # Chart Queries
 
+query "planet_population_distribution" {
+  sql = <<-EOQ
+    select
+      cast(population as long) as population,
+      name
+    from
+      planets
+    where
+      population not in ('N/A', 'NA')
+    order by
+      population desc;
+  EOQ
+}
+
 query "top_10_largest_planets" {
   sql = <<-EOQ
     select
@@ -250,20 +269,6 @@ query "top_10_largest_planets" {
   EOQ
 }
 
-query "planet_population_distribution" {
-  sql = <<-EOQ
-    select
-      cast(population as long) as population,
-      name
-    from
-      planets
-    where
-      population not in ('N/A', 'NA')
-    order by
-      population desc;
-  EOQ
-}
-
 query "planet_climate_distribution" {
   sql = <<-EOQ
     select
@@ -273,18 +278,6 @@ query "planet_climate_distribution" {
       planets
     group by
       climate;
-  EOQ
-}
-
-query "starship_manufacturer_distribution" {
-  sql = <<-EOQ
-    select
-      manufacturer,
-      count(*) as "Number of Starships"
-    from
-      starships
-    group by
-      manufacturer;
   EOQ
 }
 
@@ -299,6 +292,18 @@ query "starship_cost_distribution" {
       cost_in_credits not in ('N/A', 'NA')
     order by
       cost_in_credits desc;
+  EOQ
+}
+
+query "starship_manufacturer_distribution" {
+  sql = <<-EOQ
+    select
+      manufacturer,
+      count(*) as "Number of Starships"
+    from
+      starships
+    group by
+      manufacturer;
   EOQ
 }
 

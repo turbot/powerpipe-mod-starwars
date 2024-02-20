@@ -12,24 +12,28 @@ dashboard "star_wars_analysis_detail" {
     card {
       query = query.species_classification
       width = 3
+      type  = "info"
       args  = [self.input.species_name.value]
     }
 
     card {
       query = query.average_species_height
       width = 3
+      type  = "info"
       args  = [self.input.species_name.value]
     }
 
     card {
       query = query.most_common_skin_color
       width = 3
+      type  = "info"
       args  = [self.input.species_name.value]
     }
 
     card {
       query = query.average_lifespan
       width = 3
+      type  = "info"
       args  = [self.input.species_name.value]
     }
 
@@ -138,23 +142,6 @@ query "average_lifespan" {
 }
 
 # Other detail page queries
-
-query "species_distribution_over_homeworlds" {
-  sql = <<-EOQ
-    select
-      homeworld,
-      count(*) as num_species
-    from
-      species
-    where
-      homeworld is not null
-    group by
-      homeworld
-    order by
-      num_species desc
-    limit 5;
-  EOQ
-}
 
 query "species_overview" {
   sql = <<-EOQ
