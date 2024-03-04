@@ -1,8 +1,22 @@
-# Star Wars Data Analysis Mod for PowerPipe
+# StarWars Mod for Powerpipe
 
-Analyze characters, species, planets, spaceships and vehicle performance data using DuckDb and PowerPipe.
+Analyze characters, species, planets, spaceships and vehicle performance data using DuckDb and Powerpipe.
 
-![star-wars-analysis-dashboard](https://github.com/turbot/powerpipe-mod-star-wars/assets/72413708/f5c5d90b-da23-4cb9-94a5-5614d6e642a2)
+![image](https://github.com/turbot/powerpipe-mod-starwars/blob/add-dashboards/docs/starwars_dashboard_screenshot.png)
+
+## Overview
+
+Dashboards can help answer questions like:
+
+- How many starships are cataloged in the database?
+- What is the distribution of planet populations across the galaxy?
+- Which species has the highest average height?
+- What are the most common climates on planets within the Star Wars universe?
+- Which manufacturers have produced the most starships?
+
+## Documentation
+
+- **[Dashboards →](https://hub.powerpipe.io/mods/turbot/starwars/dashboards)**
 
 ## Installation
 
@@ -12,27 +26,20 @@ Download and install Powerpipe (https://powerpipe.io/downloads). Or use Brew:
 brew install turbot/tap/powerpipe
 ```
 
-## Clone the Mod Repository
+Clone:
 
 ```sh
-git clone https://github.com/turbot/powerpipe-mod-star-wars.git
-cd powerpipe-mod-star-wars
+git clone https://github.com/turbot/powerpipe-mod-starwars.git
+cd powerpipe-mod-starwars
 ```
 
-## Install the Dataset
+Download the [Datasets for Star Wars Analysis](https://www.kaggle.com/datasets/souravthe/star-war-dataset-analysis-duckdb/data?select=star_war.duckdb) (requires signup with [Kaggle](https://www.kaggle.com/))
 
-- Visit the [Datasets for Star Wars Analysis (DuckDB)](https://www.kaggle.com/datasets/souravthe/star-war-dataset-analysis-duckdb/data?select=star_war.duckdb).
+Extract the downloaded file in the current directory:
 
-- Click on `Download` (Free signup to Kaggle is required).
-
-- Unzip the Downloaded File:
-
-  - For Mac/Linux:
-    - Use the command `unzip ~/Downloads/archive.zip` to extract the file.
-
-  - For Windows:
-    - Navigate to the folder containing the downloaded ZIP file, usually the Downloads folder.
-    - Right-click on the ZIP file and choose `Extract All...` or `Extract Here` depending on your preference. Follow the on-screen instructions to complete the extraction.
+```sh
+unzip ~/Downloads/archive.zip
+```
 
 ## Usage
 
@@ -40,12 +47,6 @@ Run the dashboard and specify the DB connection string:
 
 ```sh
 powerpipe server --database duckdb:star_wars.duckdb
-```
-
-If you have extracted the file in any other location then you need to provide the full path like below:
-
-```sh
-powerpipe server --database duckdb:///path/to/the/file/file.duckdb
 ```
 
 ## Open Source & Contributing
@@ -61,4 +62,4 @@ This repository is published under the [Apache 2.0 license](https://www.apache.o
 Want to help but not sure where to start? Pick up one of the `help wanted` issues:
 
 - [Powerpipe](https://github.com/turbot/powerpipe/labels/help%20wanted)
-- [Star Wars Mod](https://github.com/turbot/powerpipe-mod-star-wars/labels/help%20wanted)
+- [StarWars Mod](https://github.com/turbot/powerpipe-mod-starwar/labels/help%20wanted)

@@ -1,31 +1,32 @@
-dashboard "star_wars_analysis_dashboard" {
+dashboard "starwars" {
 
-  title = "Star Wars Data Analysis Dashboard"
+  title = "StarWars Dashboard"
+  documentation = file("./docs/starwars.md")
 
   container {
 
     title = "Overview"
 
     card {
-      query = query.total_starships
+      query = query.starwars_total_starships
       type  = "info"
       width = 3
     }
 
     card {
-      query = query.total_planets
+      query = query.starwars_total_planets
       type  = "info"
       width = 3
     }
 
     card {
-      query = query.total_species
+      query = query.starwars_total_species
       type  = "info"
       width = 3
     }
 
     card {
-      query = query.total_characters
+      query = query.starwars_total_characters
       type  = "info"
       width = 3
     }
@@ -37,14 +38,14 @@ dashboard "star_wars_analysis_dashboard" {
 
     chart {
       title = "Planets Population Distribution"
-      query = query.planet_population_distribution
+      query = query.starwars_planet_population_distribution
       type  = "pie"
       width = 4
     }
 
     chart {
       title = "Top 10 Largest Planets"
-      query = query.top_10_largest_planets
+      query = query.starwars_top_10_largest_planets
       type  = "column"
       series "diameter" {
         title = "Diameter in km"
@@ -62,7 +63,7 @@ dashboard "star_wars_analysis_dashboard" {
 
     chart {
       title = "Planets Climate Distribution"
-      query = query.planet_climate_distribution
+      query = query.starwars_planet_climate_distribution
       type  = "donut"
       width = 4
     }
@@ -74,14 +75,14 @@ dashboard "star_wars_analysis_dashboard" {
 
     chart {
       title = "Starship Cost in Credits Distribution"
-      query = query.starship_cost_distribution
+      query = query.starwars_starship_cost_distribution
       type  = "donut"
       width = 4
     }
 
     chart {
       title = "Starship Manufacturer Distribution"
-      query = query.starship_manufacturer_distribution
+      query = query.starwars_starship_manufacturer_distribution
       type  = "column"
       width = 4
       series "Number of Starships" {
@@ -99,7 +100,7 @@ dashboard "star_wars_analysis_dashboard" {
 
     chart {
       title = "Starship Passenger Distribution"
-      query = query.starship_passenger_distribution
+      query = query.starwars_starship_passenger_distribution
       type  = "pie"
       width = 4
     }
@@ -111,7 +112,7 @@ dashboard "star_wars_analysis_dashboard" {
 
     chart {
       title = "Top 10 Species with Highest Average Height"
-      query = query.average_height_of_species
+      query = query.starwars_average_height_of_species
       type  = "column"
       width = 4
       series "average_height" {
@@ -129,7 +130,7 @@ dashboard "star_wars_analysis_dashboard" {
 
     chart {
       title = "Species Classification Distribution"
-      query = query.species_classification_distribution
+      query = query.starwars_species_classification_distribution
       type  = "column"
       width = 4
       series "Number of Species" {
@@ -147,7 +148,7 @@ dashboard "star_wars_analysis_dashboard" {
 
     chart {
       title = "Top 10 Species with Highest Average Lifespan"
-      query = query.species_lifespan_distribution
+      query = query.starwars_species_lifespan_distribution
       type  = "column"
       width = 4
       series "average_lifespan" {
@@ -170,7 +171,7 @@ dashboard "star_wars_analysis_dashboard" {
 
     chart {
       title = "Top 10 Fastest Vehicles(Atmosphering Speed)"
-      query = query.fastest_vehicles
+      query = query.starwars_fastest_vehicles
       type  = "column"
       width = 6
       series "max_atmosphering_speed" {
@@ -188,7 +189,7 @@ dashboard "star_wars_analysis_dashboard" {
 
     chart {
       title = "Top 10 Vehicle with Highest Cargo Capacity"
-      query = query.vehicle_cargo_capacity_comparison
+      query = query.starwars_vehicle_cargo_capacity_comparison
       type  = "column"
       width = 6
       series "cargo_capacity" {
@@ -202,7 +203,7 @@ dashboard "star_wars_analysis_dashboard" {
 
 # Card Queries
 
-query "total_starships" {
+query "starwars_total_starships" {
   sql = <<-EOQ
     select
       count(*) as "Total Starships"
@@ -211,7 +212,7 @@ query "total_starships" {
   EOQ
 }
 
-query "total_planets" {
+query "starwars_total_planets" {
   sql = <<-EOQ
     select
       count(*) as "Total Planets"
@@ -220,7 +221,7 @@ query "total_planets" {
   EOQ
 }
 
-query "total_species" {
+query "starwars_total_species" {
   sql = <<-EOQ
     select
       count(*) as "Total Species"
@@ -229,7 +230,7 @@ query "total_species" {
   EOQ
 }
 
-query "total_characters" {
+query "starwars_total_characters" {
   sql = <<-EOQ
     select
       count(*) as "Total Characters"
@@ -240,7 +241,7 @@ query "total_characters" {
 
 # Chart Queries
 
-query "planet_population_distribution" {
+query "starwars_planet_population_distribution" {
   sql = <<-EOQ
     select
       cast(population as long) as population,
@@ -254,7 +255,7 @@ query "planet_population_distribution" {
   EOQ
 }
 
-query "top_10_largest_planets" {
+query "starwars_top_10_largest_planets" {
   sql = <<-EOQ
     select
       name,
@@ -269,7 +270,7 @@ query "top_10_largest_planets" {
   EOQ
 }
 
-query "planet_climate_distribution" {
+query "starwars_planet_climate_distribution" {
   sql = <<-EOQ
     select
       climate,
@@ -281,21 +282,21 @@ query "planet_climate_distribution" {
   EOQ
 }
 
-query "starship_cost_distribution" {
+query "starwars_starship_cost_distribution" {
   sql = <<-EOQ
     select
       name as "Starships",
       cast(cost_in_credits as long) as cost_in_credits
     from
       starships
-    where 
+    where
       cost_in_credits not in ('N/A', 'NA')
     order by
       cost_in_credits desc;
   EOQ
 }
 
-query "starship_manufacturer_distribution" {
+query "starwars_starship_manufacturer_distribution" {
   sql = <<-EOQ
     select
       manufacturer,
@@ -307,7 +308,7 @@ query "starship_manufacturer_distribution" {
   EOQ
 }
 
-query "starship_passenger_distribution" {
+query "starwars_starship_passenger_distribution" {
   sql = <<-EOQ
     select
       passengers,
@@ -319,7 +320,7 @@ query "starship_passenger_distribution" {
   EOQ
 }
 
-query "average_height_of_species" {
+query "starwars_average_height_of_species" {
   sql = <<-EOQ
     select
       name,
@@ -334,7 +335,7 @@ query "average_height_of_species" {
   EOQ
 }
 
-query "species_classification_distribution" {
+query "starwars_species_classification_distribution" {
   sql = <<-EOQ
     select
       classification,
@@ -350,14 +351,14 @@ query "species_classification_distribution" {
   EOQ
 }
 
-query "species_lifespan_distribution" {
+query "starwars_species_lifespan_distribution" {
   sql = <<-EOQ
     select
       name,
       cast(average_lifespan as integer) as average_lifespan
     from
       species
-    where 
+    where
       average_lifespan not in ('N/A', 'NA', 'indefinite')
     order by
       average_lifespan desc
@@ -365,14 +366,14 @@ query "species_lifespan_distribution" {
   EOQ
 }
 
-query "fastest_vehicles" {
+query "starwars_fastest_vehicles" {
   sql = <<-EOQ
     select
       name,
       cast(max_atmosphering_speed as integer) as max_atmosphering_speed
     from
       vehicles
-    where 
+    where
       max_atmosphering_speed not in ('N/A', 'NA')
     order by
       max_atmosphering_speed desc
@@ -380,14 +381,14 @@ query "fastest_vehicles" {
   EOQ
 }
 
-query "vehicle_cargo_capacity_comparison" {
+query "starwars_vehicle_cargo_capacity_comparison" {
   sql = <<-EOQ
     select
       name,
       cast(cargo_capacity as integer) as cargo_capacity
     from
       vehicles
-    where 
+    where
       cargo_capacity not in ('N/A', 'NA', 'none')
     order by
       cargo_capacity desc

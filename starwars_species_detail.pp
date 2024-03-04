@@ -1,37 +1,38 @@
-dashboard "star_wars_analysis_detail" {
-  title = "Star Wars Species Detail Page"
+dashboard "starwars_species_detail" {
+
+  title = "StarWars Species Detail"
 
   input "species_name" {
     title = "Select a Species:"
-    query = query.species_input
+    query = query.starwars_species_input
     width = 4
   }
 
   container {
 
     card {
-      query = query.species_classification
+      query = query.starwars_species_classification
       width = 3
       type  = "info"
       args  = [self.input.species_name.value]
     }
 
     card {
-      query = query.average_species_height
+      query = query.starwars_average_species_height
       width = 3
       type  = "info"
       args  = [self.input.species_name.value]
     }
 
     card {
-      query = query.most_common_skin_color
+      query = query.starwars_species_most_common_skin_color
       width = 3
       type  = "info"
       args  = [self.input.species_name.value]
     }
 
     card {
-      query = query.average_lifespan
+      query = query.starwars_species_average_lifespan
       width = 3
       type  = "info"
       args  = [self.input.species_name.value]
@@ -47,7 +48,7 @@ dashboard "star_wars_analysis_detail" {
         title = "Species Overview"
         width = 6
         type  = "line"
-        query = query.species_overview
+        query = query.starwars_species_overview
         args  = [self.input.species_name.value]
       }
 
@@ -55,7 +56,7 @@ dashboard "star_wars_analysis_detail" {
         title = "Homeworld Details Overview"
         width = 6
         type  = "line"
-        query = query.homeworld_details_overview
+        query = query.starwars_species_homeworld_details_overview
         args  = [self.input.species_name.value]
       }
     }
@@ -66,7 +67,7 @@ dashboard "star_wars_analysis_detail" {
       table {
         title = "Characters from this Species"
         width = 12
-        query = query.characters_overview
+        query = query.starwars_species_characters_overview
         args  = [self.input.species_name.value]
       }
     }
@@ -76,7 +77,7 @@ dashboard "star_wars_analysis_detail" {
 
 # Input query
 
-query "species_input" {
+query "starwars_species_input" {
   sql = <<-EOQ
     select
       name as label,
@@ -90,7 +91,7 @@ query "species_input" {
 
 # Card queries
 
-query "species_classification" {
+query "starwars_species_classification" {
   sql = <<-EOQ
     select
       'Classification' as label,
@@ -102,7 +103,7 @@ query "species_classification" {
   EOQ
 }
 
-query "average_species_height" {
+query "starwars_average_species_height" {
   sql = <<-EOQ
     select
       'Average Height in cm' as label,
@@ -114,7 +115,7 @@ query "average_species_height" {
   EOQ
 }
 
-query "most_common_skin_color" {
+query "starwars_species_most_common_skin_color" {
   sql = <<-EOQ
     select
       'Most Common Skin Color' as label,
@@ -126,7 +127,7 @@ query "most_common_skin_color" {
   EOQ
 }
 
-query "average_lifespan" {
+query "starwars_species_average_lifespan" {
   sql = <<-EOQ
     select
       'Average Lifespan in years' as label,
@@ -143,7 +144,7 @@ query "average_lifespan" {
 
 # Other detail page queries
 
-query "species_overview" {
+query "starwars_species_overview" {
   sql = <<-EOQ
     select
       name as 'Species Name',
@@ -160,7 +161,7 @@ query "species_overview" {
   EOQ
 }
 
-query "homeworld_details_overview" {
+query "starwars_species_homeworld_details_overview" {
   sql = <<-EOQ
     select
       name as 'Homeworld Name',
@@ -179,7 +180,7 @@ query "homeworld_details_overview" {
   EOQ
 }
 
-query "characters_overview" {
+query "starwars_species_characters_overview" {
   sql = <<-EOQ
     select
       name as 'Character Name',
