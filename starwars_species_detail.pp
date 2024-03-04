@@ -1,6 +1,7 @@
 dashboard "starwars_species_detail" {
 
   title = "StarWars Species Detail"
+  documentation = file("./docs/starwars_species_detail.md")
 
   input "species_name" {
     title = "Select a Species:"
