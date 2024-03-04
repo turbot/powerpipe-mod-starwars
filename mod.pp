@@ -1,6 +1,6 @@
-mod "star_wars_analysis_dashboard" {
-  title         = "Star Wars Analysis Dashboard"
+mod "starwars" {
+  title         = "Star Wars"
   description   = ""
   documentation = file("./README.md")
-  categories    = ["duckDB"]
+  categories    = ["dashboard", "duckdb"]
 }
