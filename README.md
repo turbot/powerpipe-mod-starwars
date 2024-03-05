@@ -43,13 +43,15 @@ Extract the downloaded file in the dashboards directory:
 unzip ~/Downloads/archive.zip
 ```
 
-## Usage
+### Browsing Dashboards
 
-Run the dashboard and specify the DB connection string:
+Start the dashboard server with the DB connection string:
 
 ```sh
 powerpipe server --database duckdb:star_wars.duckdb
 ```
+
+Browse and view your dashboards at **https://localhost:9033**.
 
 ## Open Source & Contributing
 
