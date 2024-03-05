@@ -37,7 +37,7 @@ powerpipe mod install github.com/turbot/powerpipe-mod-starwars
 
 Download the [Datasets for Star Wars Analysis](https://www.kaggle.com/datasets/souravthe/star-war-dataset-analysis-duckdb/data?select=star_war.duckdb) (requires signup with [Kaggle](https://www.kaggle.com/))
 
-Extract the downloaded file in the current directory:
+Extract the downloaded file in the dashboards directory:
 
 ```sh
 unzip ~/Downloads/archive.zip
