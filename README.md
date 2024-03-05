@@ -1,6 +1,6 @@
 # StarWars Mod for Powerpipe
 
-Analyze characters, species, planets, spaceships and vehicle performance data using [DuckDb](https://duckdb.org/) and [Powerpipe](https://powerpipe.io).
+Analyze characters, species, planets, spaceships and vehicle performance data for [StarWars](https://www.starwars.com/) using [DuckDb](https://duckdb.org/) and [Powerpipe](https://powerpipe.io).
 
 ![image](https://github.com/turbot/powerpipe-mod-starwars/blob/add-dashboards/docs/starwars_dashboard_screenshot.png)
 
