@@ -26,11 +26,13 @@ Download and install Powerpipe (https://powerpipe.io/downloads). Or use Brew:
 brew install turbot/tap/powerpipe
 ```
 
-Clone:
+Install the mod:
 
 ```sh
-git clone https://github.com/turbot/powerpipe-mod-starwars.git
-cd powerpipe-mod-starwars
+mkdir dashboards
+cd dashboards
+powerpipe mod init
+powerpipe mod install github.com/turbot/powerpipe-mod-starwars
 ```
 
 Download the [Datasets for Star Wars Analysis](https://www.kaggle.com/datasets/souravthe/star-war-dataset-analysis-duckdb/data?select=star_war.duckdb) (requires signup with [Kaggle](https://www.kaggle.com/))
