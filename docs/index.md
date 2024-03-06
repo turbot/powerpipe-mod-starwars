@@ -8,7 +8,9 @@ View dashboards to analyze [Star Wars](https://www.starwars.com/) characters, sp
 
 - **[Dashboards →](https://hub.powerpipe.io/mods/turbot/starwars/dashboards)**
 
-## Installation
+## Getting Started
+
+### Installation
 
 Download and install Powerpipe (https://powerpipe.io/downloads). Or use Brew:
 
@@ -56,4 +58,4 @@ This repository is published under the [Apache 2.0 license](https://www.apache.o
 Want to help but not sure where to start? Pick up one of the `help wanted` issues:
 
 - [Powerpipe](https://github.com/turbot/powerpipe/labels/help%20wanted)
-- [StarWars Mod](https://github.com/turbot/powerpipe-mod-starwar/labels/help%20wanted)
+- [Star Wars Mod](https://github.com/turbot/powerpipe-mod-starwar/labels/help%20wanted)
