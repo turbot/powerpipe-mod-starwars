@@ -1,6 +1,6 @@
 mod "starwars" {
   title         = "Star Wars"
-  description   = "Analyze characters, species, planets, spaceships and vehicle performance data using DuckDb and Powerpipe."
+  description   = "Visualize Star Wars character, species, planet, spaceship data, and more using Powerpipe and DuckDB."
   color         = "#FFE81F"
   documentation = file("./README.md")
   categories    = ["dashboard", "duckdb"]
@@ -8,6 +8,6 @@ mod "starwars" {
 
 opengraph {
   title       = "Powerpipe Mod for Star Wars"
-  description = "Navigate the soundscape of Spotify with the Spotify Dashboard, providing a deep dive into artist presence, album releases, track counts, and genre diversity, enriched with visual explorations of genre trends, artist popularity, and track popularity, using SQLite with Powerpipe."
-  image       = "/images/mods/turbot/spotify-social-graphic.png"
+  description = "Visualize Star Wars character, species, planet, spaceship data, and more using Powerpipe and DuckDB."
+  image       = "/images/mods/turbot/starwars-social-graphic.png"
 }
