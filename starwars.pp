@@ -1,6 +1,6 @@
 dashboard "starwars" {
 
-  title = "StarWars Dashboard"
+  title = "Star Wars Dashboard"
   documentation = file("./docs/starwars.md")
 
   container {

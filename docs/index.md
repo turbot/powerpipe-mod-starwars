@@ -1,18 +1,8 @@
-# Star Wars Mod for Powerpipe
+# Star Wars Mod
 
 View dashboards to analyze [Star Wars](https://www.starwars.com/) characters, species, planets, spaceships, and more.
 
-![image](https://raw.githubusercontent.com/turbot/powerpipe-mod-starwars/main/docs/starwars_dashboard_screenshot.png)
-
-## Overview
-
-Dashboards can help answer questions like:
-
-- How many starships are cataloged in the database?
-- What is the distribution of planet populations across the galaxy?
-- Which species has the highest average height?
-- What are the most common climates on planets within the Star Wars universe?
-- Which manufacturers have produced the most starships?
+<img src="https://raw.githubusercontent.com/turbot/powerpipe-mod-starwars/main/docs/starwars_dashboard_screenshot.png" width="50%" type="thumbnail"/>
 
 ## Documentation
 
