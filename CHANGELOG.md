@@ -3,4 +3,5 @@
 _What's new?_
 
 - New dashboard:
-  - Star Wars Dashboard. ([#1](https://github.com/turbot/powerpipe-mod-starwars/pull/1))
+  - [Star Wars Dashboard](https://hub.powerpipe.io/mods/turbot/powerpipe-mod-starwars/dashboard.starwars)
+  - [Star Wars Species Detail](https://hub.powerpipe.io/mods/turbot/powerpipe-mod-starwars/dashboard.starwars_species_detail)
